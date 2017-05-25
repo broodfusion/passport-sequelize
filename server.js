@@ -1,7 +1,7 @@
 var express    = require('express');
 var app        = express();
 var passport   = require('passport');
-var session    = require('express-session');
+var session    = require('cookie-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 
@@ -11,7 +11,13 @@ app.use(bodyParser.json());
 
 // For Passport
  
-app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:false})); // session secret
+app.use(session({
+  name: 'session',
+  keys: ['key1', 'key2'],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(function(req, res, next){
