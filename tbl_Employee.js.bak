@@ -1,0 +1,131 @@
+/* jshint indent: 2 */
+
+module.exports = function(sequelize, DataTypes) {
+  var User =  sequelize.define('tbl_Employee', {
+    EmployeeNo: {
+      type: DataTypes.INTEGER(11),
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    Salute: {
+      type: DataTypes.STRING(5),
+      allowNull: true
+    },
+    JobTitle: {
+      type: DataTypes.STRING(150),
+      allowNull: true
+    },
+    EmployeeID: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    FirstName: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    LastName: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    MidName: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    GroupType: {
+      type: DataTypes.STRING(30),
+      allowNull: true
+    },
+    Address1: {
+      type: DataTypes.STRING(250),
+      allowNull: true
+    },
+    Address2: {
+      type: DataTypes.STRING(250),
+      allowNull: true
+    },
+    City: {
+      type: DataTypes.STRING(50),
+      allowNull: true
+    },
+    State: {
+      type: DataTypes.STRING(150),
+      allowNull: true
+    },
+    ZipCode: {
+      type: DataTypes.STRING(25),
+      allowNull: true
+    },
+    Tel: {
+      type: DataTypes.STRING(25),
+      allowNull: true
+    },
+    Cell: {
+      type: DataTypes.STRING(25),
+      allowNull: true
+    },
+    Pager: {
+      type: DataTypes.STRING(25),
+      allowNull: true
+    },
+    Email: {
+      type: DataTypes.STRING(250),
+      allowNull: true
+    },
+    Password: {
+      type: DataTypes.STRING(15),
+      allowNull: true
+    },
+    Status: {
+      type: DataTypes.CHAR(1),
+      allowNull: true
+    },
+    Lupdate: {
+      type: DataTypes.INTEGER(11),
+      allowNull: true
+    },
+    UpdateBy: {
+      type: DataTypes.STRING(25),
+      allowNull: true
+    },
+    UpdateOn: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    AccessLevel: {
+      type: DataTypes.INTEGER(6),
+      allowNull: true
+    },
+    Location: {
+      type: DataTypes.STRING(2),
+      allowNull: true
+    },
+    dateCreated: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    birthdate: {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    CustomerID: {
+      type: DataTypes.STRING(250),
+      allowNull: true
+    },
+    companyType: {
+      type: DataTypes.STRING(20),
+      allowNull: true
+    },
+    layOut: {
+      type: DataTypes.STRING(2),
+      allowNull: true
+    },
+    Extension: {
+      type: DataTypes.STRING(5),
+      allowNull: true
+    }
+  }, {
+    tableName: 'tbl_Employee'
+  });
+  return User;
+};

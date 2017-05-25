@@ -1,0 +1,52 @@
+{
+ 
+    "development": {
+ 
+        "username": "otxusa",
+ 
+        "password": "OTXusa16030",
+ 
+        "database": "Pactrans",
+ 
+        "host": "otx-mysql.c7yr8sjn5kzr.us-west-1.rds.amazonaws.com",
+ 
+        "dialect": "mysql",
+        
+        "ssl": "Amazon RDS",
+        
+        "define": {
+            "timestamps": false
+        }
+        
+ 
+    },
+ 
+    "test": {
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "",
+ 
+        "dialect": "mysql"
+ 
+    },
+ 
+    "production": {
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "127.0.0.1",
+ 
+        "dialect": "mysql"
+ 
+    }
+ 
+}
