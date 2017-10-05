@@ -4,6 +4,10 @@ var passport   = require('passport');
 var session    = require('cookie-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
+var booking = require('./app/controllers/booking')
+
+
+
 
 //For body parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +20,7 @@ app.use(session({
   keys: ['key1', 'key2'],
 
   // Cookie Options
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  maxAge: 20 * 60 * 1000 // 20 minutes
 })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -39,6 +43,7 @@ var models = require("./app/models");
 //Routes
 var authRoute = require('./app/routes/auth.js')(app, passport);
 
+
 //load passport strategies
 require('./app/config/passport/passport.js')(passport, models.tbl_Employee);
 
@@ -52,6 +57,8 @@ models.sequelize.sync().then(function() {
 });
 
 
+
+app.get('/booking', booking.index)
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("server has started");
